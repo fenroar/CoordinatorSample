@@ -37,14 +37,3 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController: LoginViewModelDelegate {
-    
-    func handleDidLogin() {
-        
-        let storyboard = UIStoryboard.main
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-        
-        navigationController?.setViewControllers([mainViewController], animated: true)
-    }
-}
-

@@ -40,24 +40,3 @@ class SplashViewController: UIViewController {
     }
 }
 
-extension SplashViewController: SplashViewModelDelegate {
-    
-    func showLogin() {
-        let storyboard = UIStoryboard.register
-        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        let loginViewModel = LoginViewModel(delegate: loginViewController)
-        loginViewController.viewModel = loginViewModel
-        
-        navigationController?.pushViewController(loginViewController, animated: true)
-    }
-    
-    func showRegistration() {
-        let storyboard = UIStoryboard.register
-        let registerViewController = storyboard.instantiateViewController(withIdentifier: "RegisterEmailViewController") as! RegisterEmailViewController
-        let registerViewModel = RegisterEmailViewModel(delegate: registerViewController)
-        registerViewController.viewModel = registerViewModel
-        
-        navigationController?.pushViewController(registerViewController, animated: true)
-    }
-}
-

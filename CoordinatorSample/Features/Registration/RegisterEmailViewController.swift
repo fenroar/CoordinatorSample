@@ -38,16 +38,3 @@ class RegisterEmailViewController: UIViewController {
     }
 }
 
-extension RegisterEmailViewController: RegisterEmailViewModelDelegate {
-    
-    func handleDidRegisterWithEmail() {
-        
-        let storyboard = UIStoryboard.register
-        let registerViewController = storyboard.instantiateViewController(withIdentifier: "RegisterUsernameViewController") as! RegisterUsernameViewController
-        let registerViewModel = RegisterUsernameViewModel(delegate: registerViewController)
-        registerViewController.viewModel = registerViewModel
-        
-        navigationController?.pushViewController(registerViewController, animated: true)
-    }
-}
-

@@ -26,6 +26,7 @@
 		D01A3EBF1F78286F000AA732 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01A3EBE1F78286E000AA732 /* Storyboard.swift */; };
 		D01A3EC31F786222000AA732 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01A3EC21F786222000AA732 /* MainViewController.swift */; };
 		D01A3ECB1F786638000AA732 /* CoordinatorSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01A3ECA1F786638000AA732 /* CoordinatorSampleUITests.swift */; };
+		D01A3ED51F7867F6000AA732 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01A3ED41F7867F6000AA732 /* RegistrationCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		D01A3EC81F786638000AA732 /* CoordinatorSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinatorSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01A3ECA1F786638000AA732 /* CoordinatorSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorSampleUITests.swift; sourceTree = "<group>"; };
 		D01A3ECC1F786638000AA732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D01A3ED41F7867F6000AA732 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
 		EF3A91973C6BCF5472945AE5 /* Pods-CoordinatorSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoordinatorSampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoordinatorSampleTests/Pods-CoordinatorSampleTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +191,7 @@
 				D01A3EBA1F781CAB000AA732 /* RegisterUsernameViewModel.swift */,
 				D01A3EB11F7818BA000AA732 /* SplashViewController.swift */,
 				D01A3EBC1F781CB9000AA732 /* SplashViewModel.swift */,
+				D01A3ED41F7867F6000AA732 /* RegistrationCoordinator.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				D01A3EB91F781C97000AA732 /* RegisterEmailViewModel.swift in Sources */,
 				D01A3EB41F7818BA000AA732 /* RegisterUsernameViewController.swift in Sources */,
 				D01A3EB51F7818BA000AA732 /* SplashViewController.swift in Sources */,
+				D01A3ED51F7867F6000AA732 /* RegistrationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

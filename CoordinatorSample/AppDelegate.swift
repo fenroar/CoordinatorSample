@@ -12,21 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var coordinator: RegistrationCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.coordinator = RegistrationCoordinator(window: window)
         
-        let storyboard = UIStoryboard.register
-        
-        let rootViewController = storyboard.instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
-        let viewModel = SplashViewModel(delegate: rootViewController)
-        rootViewController.viewModel = viewModel
-        
-        let navigationController = UINavigationController(rootViewController: rootViewController)
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
+        coordinator?.start()
         
         return true
     }

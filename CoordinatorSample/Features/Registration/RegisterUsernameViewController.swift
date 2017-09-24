@@ -34,15 +34,3 @@ class RegisterUsernameViewController: UIViewController {
             .addDisposableTo(disposeBag)
     }
 }
-
-extension RegisterUsernameViewController: RegisterUsernameViewModelDelegate {
-    
-    func handleDidRegisterWithUsername() {
-        
-        let storyboard = UIStoryboard.main
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-        
-        navigationController?.setViewControllers([mainViewController], animated: true)
-    }
-}
-
