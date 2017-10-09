@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.coordinator = RegistrationCoordinator(window: window)
+        
+        let dependency = RegistrationDependency(wireframeFactory: UINavigationControllerFactory(), viewModelFactory: RegistrationViewModelFactory())
+        self.coordinator = RegistrationCoordinator(window: window, dependency: dependency)
         
         coordinator?.start()
         

@@ -8,7 +8,7 @@ enum LoginViewModelAction {
     case login
 }
 
-struct LoginViewModel {
+class LoginViewModel {
     
     private let disposeBag = DisposeBag()
     

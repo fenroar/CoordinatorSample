@@ -1,30 +1,38 @@
 import UIKit
 
+typealias RegistrationCoordinatorDelegate = SplashViewModelDelegate & LoginViewModelDelegate & RegisterEmailViewModelDelegate & RegisterUsernameViewModelDelegate
+
+struct RegistrationDependency {
+    var wireframeFactory: NavigationWireframeFactory
+    var viewModelFactory: RegistrationFactory
+}
+
 class RegistrationCoordinator {
     
     weak var window: Window?
     var navigationController: NavigationWireframe?
+    var dependency: RegistrationDependency
     
-    init(window: Window?) {
+    init(window: Window?, dependency: RegistrationDependency) {
         self.window = window
+        self.dependency = dependency
     }
     
     func start() {
-        
-        let storyboard = UIStoryboard.register
-        
-        let rootViewController = storyboard.instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
-        let viewModel = SplashViewModel(delegate: self)
-        rootViewController.viewModel = viewModel
-        
-        navigationController = UINavigationController(rootViewController: rootViewController)
+        let rootViewModel = dependency.viewModelFactory.buildSplashViewModel(delegate: self)
+        let rootViewController = buildSplashViewController(viewModel: rootViewModel)
+        navigationController = dependency.wireframeFactory.buildNavigationWireframe(with: rootViewController)
         window?.rootViewController = navigationController?.root
         window?.makeKeyAndVisible()
     }
     
     // MARK: Build
-    func buildLoginViewModel() -> LoginViewModel {
-        return LoginViewModel(delegate: self)
+    func buildSplashViewController(viewModel: SplashViewModel) -> SplashViewController {
+        let storyboard = UIStoryboard.register
+        let splashViewController = storyboard.instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
+        splashViewController.viewModel = viewModel
+        
+        return splashViewController
     }
     
     func buildLoginViewController(viewModel: LoginViewModel) -> LoginViewController {
@@ -35,10 +43,6 @@ class RegistrationCoordinator {
         return loginViewController
     }
     
-    func buildRegisterUsernameViewModel() -> RegisterUsernameViewModel {
-        return RegisterUsernameViewModel(delegate: self)
-    }
-    
     func buildRegisterUsernameViewController(viewModel: RegisterUsernameViewModel) -> RegisterUsernameViewController {
         
         let storyboard = UIStoryboard.register
@@ -46,11 +50,6 @@ class RegistrationCoordinator {
         registerViewController.viewModel = viewModel
         
         return registerViewController
-    }
-    
-    func buildRegisterEmailViewModel() -> RegisterEmailViewModel {
-        
-        return RegisterEmailViewModel(delegate: self)
     }
     
     func buildRegisterEmailViewController(viewModel: RegisterEmailViewModel) -> RegisterEmailViewController {
@@ -66,14 +65,14 @@ extension RegistrationCoordinator: SplashViewModelDelegate {
     
     func showLogin() {
      
-        let viewModel = buildLoginViewModel()
+        let viewModel = dependency.viewModelFactory.buildLoginViewModel(delegate: self)
         let loginViewController = buildLoginViewController(viewModel: viewModel)
         navigationController?.pushViewController(loginViewController, animated: true)
     }
     
     func showRegistration() {
         
-        let viewModel = buildRegisterUsernameViewModel()
+        let viewModel = dependency.viewModelFactory.buildRegisterUsernameViewModel(delegate: self)
         let registerViewController = buildRegisterUsernameViewController(viewModel: viewModel)
         navigationController?.pushViewController(registerViewController, animated: true)
     }
@@ -104,7 +103,7 @@ extension RegistrationCoordinator: RegisterUsernameViewModelDelegate {
     
     func handleDidRegisterWithUsername() {
         
-        let viewModel = buildRegisterEmailViewModel()
+        let viewModel = dependency.viewModelFactory.buildRegisterEmailViewModel(delegate: self)
         let registerViewController = buildRegisterEmailViewController(viewModel: viewModel)
         
         navigationController?.pushViewController(registerViewController, animated: true)

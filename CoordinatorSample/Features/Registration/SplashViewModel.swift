@@ -10,7 +10,7 @@ enum SplashViewModelAction {
     case register
 }
 
-struct SplashViewModel {
+class SplashViewModel {
     
     private let disposeBag = DisposeBag()
     

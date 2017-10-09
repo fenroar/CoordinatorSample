@@ -8,7 +8,7 @@ enum RegisterEmailViewModelAction {
     case register
 }
 
-struct RegisterEmailViewModel {
+class RegisterEmailViewModel {
     
     private let disposeBag = DisposeBag()
     

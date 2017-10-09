@@ -15,3 +15,17 @@ extension UINavigationController: NavigationWireframe {
         return self
     }
 }
+
+
+protocol NavigationWireframeFactory {
+    
+    func buildNavigationWireframe(with rootViewController: UIViewController) -> NavigationWireframe
+}
+
+
+class UINavigationControllerFactory: NavigationWireframeFactory {
+    
+    func buildNavigationWireframe(with rootViewController: UIViewController) -> NavigationWireframe {
+        return UINavigationController(rootViewController: rootViewController)
+    }
+}

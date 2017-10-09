@@ -11,6 +11,8 @@
 		CF20DE0EDBB6712D4ADC6DE4 /* Pods_CoordinatorSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1C542DEE1C9732FB6D57F9 /* Pods_CoordinatorSample.framework */; };
 		D001AEA31F8C018900EE765C /* NavigationWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D001AEA21F8C018800EE765C /* NavigationWireframe.swift */; };
 		D001AEA51F8C040100EE765C /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = D001AEA41F8C040100EE765C /* Window.swift */; };
+		D001AEA71F8C2AE900EE765C /* RegistrationViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D001AEA61F8C2AE900EE765C /* RegistrationViewModelFactory.swift */; };
+		D001AEAA1F8C2B5600EE765C /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D001AEA91F8C2B5600EE765C /* TestHelpers.swift */; };
 		D01A3E7E1F78161A000AA732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01A3E7D1F78161A000AA732 /* AppDelegate.swift */; };
 		D01A3E831F78161A000AA732 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01A3E811F78161A000AA732 /* Main.storyboard */; };
 		D01A3E851F78161A000AA732 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D01A3E841F78161A000AA732 /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		9BAC3FE3E1CD301C32042F61 /* Pods-CoordinatorSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoordinatorSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoordinatorSample/Pods-CoordinatorSample.release.xcconfig"; sourceTree = "<group>"; };
 		D001AEA21F8C018800EE765C /* NavigationWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationWireframe.swift; sourceTree = "<group>"; };
 		D001AEA41F8C040100EE765C /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		D001AEA61F8C2AE900EE765C /* RegistrationViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewModelFactory.swift; sourceTree = "<group>"; };
+		D001AEA91F8C2B5600EE765C /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		D01A3E7A1F78161A000AA732 /* CoordinatorSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoordinatorSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01A3E7D1F78161A000AA732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D01A3E821F78161A000AA732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,8 +130,17 @@
 			children = (
 				D001AEA21F8C018800EE765C /* NavigationWireframe.swift */,
 				D001AEA41F8C040100EE765C /* Window.swift */,
+				D001AEA61F8C2AE900EE765C /* RegistrationViewModelFactory.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		D001AEA81F8C2B4C00EE765C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D001AEA91F8C2B5600EE765C /* TestHelpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D01A3E711F78161A000AA732 = {
@@ -171,6 +184,7 @@
 		D01A3E911F78161A000AA732 /* CoordinatorSampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				D001AEA81F8C2B4C00EE765C /* Helpers */,
 				D01A3E921F78161A000AA732 /* CoordinatorSampleTests.swift */,
 				D01A3E941F78161A000AA732 /* Info.plist */,
 			);
@@ -466,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D01A3EB21F7818BA000AA732 /* LoginViewController.swift in Sources */,
+				D001AEA71F8C2AE900EE765C /* RegistrationViewModelFactory.swift in Sources */,
 				D01A3EC31F786222000AA732 /* MainViewController.swift in Sources */,
 				D01A3E7E1F78161A000AA732 /* AppDelegate.swift in Sources */,
 				D01A3EB71F781C89000AA732 /* LoginViewModel.swift in Sources */,
@@ -487,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D01A3E931F78161A000AA732 /* CoordinatorSampleTests.swift in Sources */,
+				D001AEAA1F8C2B5600EE765C /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
