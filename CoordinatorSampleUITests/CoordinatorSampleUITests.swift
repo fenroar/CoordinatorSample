@@ -51,6 +51,13 @@ class CoordinatorSampleUITests: XCTestCase {
         let app = XCUIApplication()
         app.buttons["Show Registration"].tap()
         
+        let usernameTextField = app.textFields["Username"] // username
+        usernameTextField.tap()
+        usernameTextField.typeText("my_user_name")
+        
+        let doneButton = app.buttons["Done"]
+        doneButton.tap()
+        
         let emailTextField = app.textFields["Email"] // email
         emailTextField.tap()
         emailTextField.typeText("sample@email.com")
@@ -61,13 +68,6 @@ class CoordinatorSampleUITests: XCTestCase {
         
         let nextButton = app.buttons["Next"]
         nextButton.tap()
-        
-        let usernameTextField = app.textFields["Username"] // username
-        usernameTextField.tap()
-        usernameTextField.typeText("my_user_name")
-        
-        let doneButton = app.buttons["Done"]
-        doneButton.tap()
         
         let predicate = NSPredicate(format: "exists == 1")
         let query = app.staticTexts["Main View"]
